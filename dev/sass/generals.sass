@@ -1,0 +1,64 @@
+
+// quitar cosa del focus
+*
+    outline: none!important
+
+*::focus
+    outline: 0
+
+$desdeT: 320px
+$hastaT: 767px
+
+$desdeM: $hastaT + 1
+$hastaM: 1000px
+
+$desdeG: $hastaM
+$hastaG: $desdeG + 500
+
+@mixin responsivo($media)
+    @if $media == telefonoTable
+        @media only screen and (min-width: $desdeT) and (max-width: $hastaT)
+            @content
+    @else if $media == pcMedio
+        @media only screen and (min-width: $desdeM) and (max-width: $hastaM)
+            @content
+    @else if $media == general
+        @media only screen and (min-width: $desdeG) and (max-width: $hastaG)
+            @content
+    @else if $media == resto
+        @media only screen and (min-width: $hastaG + 1) 
+            @content
+
+// colores
+$verdeOscuro: #00ACAC
+
+// // fuentes
+// @font-face
+//     font-family: 'Moon-Bold'
+//     src: url('../../fuentes/Moon Bold.otf') format('opentype')
+// @font-face
+//     font-family: 'Moon-Light'
+//     src: url('../../fuentes/Moon Light.otf') format('opentype')
+// @font-face
+//     font-family: 'Roboto-Bold'
+//     src: url('../../fuentes/Roboto-Bold.ttf') format('ttf')
+// @font-face
+//     font-family: 'Roboto-Light'
+//     src: url('../../fuentes/Roboto-Light.ttf') format('ttf')
+// @font-face
+//     font-family: 'Roboto-Regular'
+//     src: url('../../fuentes/Roboto-Regular.ttf') format('ttf')
+// @font-face
+//     font-family: 'RobotoCondensed-Regular'
+//     src: url('../../fuentes/RobotoCondensed-Regular.ttf') format('ttf')
+
+
+
+// remarcado de hipervinculos
+.hiper,
+.hiperOffColor
+    font-weight: bold
+.hiper
+    color: $verdeOscuro
+
+
